@@ -39,7 +39,7 @@ export const profilePageJsonLd = () => ({
   "@context": "https://schema.org",
   "@type": "ProfilePage",
   url: SITE_URL,
-  dateModified: profile.updated,
+  dateModified: `${profile.updated}T00:00:00+05:30`,
   mainEntity: personJsonLd(),
 });
 
@@ -52,7 +52,7 @@ export const entryJsonLd = (entry: Entry) => ({
       url: `${SITE_URL}/work/${entry.slug}`,
       name: `${fullRole(entry)}, ${entry.name}`,
       description: entry.summary,
-      dateModified: profile.updated,
+      dateModified: `${profile.updated}T00:00:00+05:30`,
       about: { "@id": PERSON_ID },
       author: {
         "@type": "Person",
