@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 
 import { profile } from "@/content";
 import { SITE_URL } from "@/lib/site";
@@ -56,6 +57,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-dvh font-sans text-[15px] leading-relaxed">
         {children}
+        <Script
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "1fe88d3b264a41ea9d52660f0dd4c9ed"}'
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
