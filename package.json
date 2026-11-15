@@ -4,11 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/resume.mts && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "activity": "node scripts/activity.mts",
+    "resume": "node scripts/resume.mts"
   },
   "dependencies": {
+    "lucide-react": "^1.73.0",
     "next": "16.4.6",
     "react": "19.3.0",
     "react-dom": "19.3.0"

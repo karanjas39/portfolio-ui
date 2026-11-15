@@ -1,0 +1,7 @@
+- Next.js 16 differs from training data: read the relevant guide in `node_modules/next/dist/docs/` before writing Next code and heed deprecations.
+- Source of truth is the Drevolabs MCP ideas notes titled `Career — …` (list with `drevolabs_ideas_get_notes` query "Career", open with `drevolabs_ideas_get_note`). Read them before adding or changing any info; if something is missing, ask and update the note first, never invent numbers.
+- All portfolio content lives in `content/` (typed by `content/schema.ts`); pages, `/career.json`, `/llms.txt`, JSON-LD, OG images and the resume are generated from it.
+- `resume` fields on each entry are the short one-page resume bullets; web copy is `sections`; UI, `/llms.txt` and `/career.json` show the same fields, so drop a field from content rather than hiding it in one place. Copy stays short, factual and professional, with no repeated lines between hero and sections.
+- `pnpm build` regenerates `public/Jaskaran_Singh_Resume.pdf` (must stay 1 page and print `OK`; skipped on Vercel/CI, so commit the PDF). `pnpm activity` rebuilds `content/activity.json` from local git repos.
+- No client components, no theme JS; light/dark is CSS-only. Bump `profile.updated` on every content update.
+- Launch, SEO and LinkedIn/GitHub follow-ups live in the Drevo note `Portfolio — Launch & online presence checklist`.
