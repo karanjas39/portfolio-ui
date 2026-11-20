@@ -140,5 +140,5 @@ export const profile: Profile = {
       ],
     },
   ],
-  updated: "2026-11-15",
+  updated: "2026-11-20",
 };
